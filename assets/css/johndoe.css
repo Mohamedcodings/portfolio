@@ -11734,3 +11734,54 @@ pre .code {
   border-radius: 8px; /* Optional: add rounded corners */
 }
 
+
+
+/* Chat Section */
+.chat-section {
+  margin-top: 2rem;
+}
+
+.chat-box {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  height: 300px;
+  overflow-y: scroll;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-family: Arial, sans-serif;
+}
+
+.chat-input-area {
+  display: flex;
+  align-items: center;
+}
+
+.chat-input {
+  width: 80%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-right: 0.5rem;
+  flex-grow: 1;
+}
+
+.chat-send-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.chat-send-btn:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+
+ul.navbar-nav.brand .brand-img {
+  width: 100px;
+  height: auto;
+  border-radius: 45%;
+}
