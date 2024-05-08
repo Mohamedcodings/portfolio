@@ -21,7 +21,7 @@
                 <h4 class="header-subtitle">Hello, I am</h4>
                 <h1 class="header-title">Mohamed Zaidi</h1>
                 <h6 class="header-mono">AI Developer | Engineering Student</h6>
-                <a href="path-to-resume.pdf" class="btn btn-primary btn-rounded"><i class="ti-printer pr-2"></i> Print Resume</a>
+                <a href="CV.pdf" class="btn btn-primary btn-rounded"><i class="ti-printer pr-2"></i> Print Resume</a>
             </div>
         </div>
     </header>
@@ -59,6 +59,7 @@
                         <a href="#contact" class="nav-link">Contact</a>
                     </li>
                 </ul>
+                
             </div>
         </div>
     </nav>
@@ -71,14 +72,14 @@
                 <h5 class="mb-3">An AI Developer and Engineering Student from Paris</h5>
                 <p class="mt-20">I specialize in artificial intelligence and machine learning, constantly exploring new
                     ways to integrate these technologies into various projects.</p>
-                <a href="path-to-cv.pdf" class="btn btn-outline-danger"><i class="icon-down-circled2"></i> Download My CV</a>
+                <a href="CV.pdf" class="btn btn-outline-danger"><i class="icon-down-circled2"></i> Download My CV</a>
             </div>
             <div class="col-lg-4 about-card">
                 <h3 class="font-weight-light">Personal Info</h3>
                 <span class="line mb-5"></span>
                 <ul class="mt40 info list-unstyled">
-                    <li><span>Email</span> : mohamed.zaidi@example.com</li>
-                    <li><span>Phone</span> : +123-456-7890</li>
+                    <li><span>Email</span> : contact@mohamedzaidi.com</li>
+                    <li><span>Phone</span> : +33 7 53 48 29 70</li>
                 </ul>
             </div>
             <div class="col-lg-4 about-card">
@@ -87,30 +88,78 @@
                 <div class="row">
                     <div class="col-1 text-danger pt-1"><i class="ti-widget icon-lg"></i></div>
                     <div class="col-10 ml-auto mr-3">
-                        <h6>AI Development</h6>
-                        <p class="subtitle">Specialized in AI algorithms and machine learning.</p>
+                        <h6>AI-Powered Applications</h6>
+                        <p class="subtitle">Developing intelligent systems using advanced machine learning algorithms and NLP techniques to automate and enhance user interactions and decision-making processes.</p>
                         <hr>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-1 text-danger pt-1"><i class="ti-paint-bucket icon-lg"></i></div>
                     <div class="col-10 ml-auto mr-3">
-                        <h6>Web Development</h6>
-                        <p class="subtitle">Full-stack web development for scalable AI projects.</p>
+                        <h6>Full-stack Development</h6>
+                        <p class="subtitle">Designing and implementing full-stack solutions with a focus on integrating backend AI functionalities into responsive and dynamic front-end interfaces.</p>
                         <hr>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-1 text-danger pt-1"><i class="ti-stats-up icon-lg"></i></div>
                     <div class="col-10 ml-auto mr-3">
-                        <h6>Data Analysis</h6>
-                        <p class="subtitle">Data-driven insights and predictive analytics.</p>
+                        <h6>AI APIs</h6>
+                        <p class="subtitle">Expertise in integrating and deploying scalable AI-powered APIs</p>
                         <hr>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <section id="chat" class="section chat-section">
+        <div class="container">
+            <h2>Chat with Mohamed's Assistant</h2>
+            <div id="chat-box" class="chat-box">
+                <!-- Messages will be dynamically inserted here -->
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="chat-input" class="chat-input" placeholder="Tell me about Mohaemd Zaidi...">
+                <button id="send-button" class="btn btn-primary chat-send-btn">Send</button>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        document.getElementById('send-button').addEventListener('click', function () {
+    const inputField = document.getElementById('chat-input');
+    const question = inputField.value.trim();
+    inputField.value = '';
+
+    if (!question) return;
+
+    // Display the user's question
+    const chatBox = document.getElementById('chat-box');
+    chatBox.innerHTML += `<div><strong>You:</strong> ${question}</div>`;
+
+    // Scroll to the bottom
+    chatBox.scrollTop = chatBox.scrollHeight;
+    
+    // Send question to the backend
+    fetch('https://chat-api-v2-env.eba-v66ny9ns.eu-west-3.elasticbeanstalk.com/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question })
+    })
+        .then(response => response.json())
+        .then(data => {
+            // Display the assistant's response
+            chatBox.innerHTML += `<div><strong>Assistant:</strong> ${data.answer}</div>`;
+            chatBox.scrollTop = chatBox.scrollHeight;
+        })
+        .catch(error => {
+            chatBox.innerHTML += `<div><strong>Error:</strong> Something went wrong. Please try again.</div>`;
+        });
+});
+
+        </script>
+            
 
     <section class="section" id="portfolio">
         <div class="container">
@@ -119,12 +168,12 @@
                 <!-- Reviews Application Project -->
                 <div class="col-md-4">
                     <div class="portfolio-card">
-                        <img src="assets/imgs/reviewsAI/ReviewsAI.jpg" class="project-image" alt="Reviews Application Project">
+                        <img src="projects/images/reviewsAI/ReviewsAI.png" class="project-image" alt="Reviews Application Project">
                         <div class="portfolio-details">
                             <span class="category">Reviews Application</span>
                             <h4 class="title">Automated Review Response App</h4>
                             <p class="description">A tool to automate responding to customer reviews, designed to save hotel managers time and improve customer satisfaction.</p>
-                            <a href="reviews_ai.html" class="btn btn-primary">View Project</a>
+                            <a href="projects/review_ai.html" class="btn btn-primary">View Project</a>
                         </div>
                     </div>
                 </div>
@@ -132,12 +181,12 @@
                 <!-- Project 2 -->
                 <div class="col-md-4">
                     <div class="portfolio-card">
-                        <img src="assets/imgs/prices_adjustments/PricesAdj1.png" class="project-image" alt="Prices Adjustment Project">
+                        <img src="projects/images/prices_adjustments/PricesAdj1.png" class="project-image" alt="Prices Adjustment Project">
                         <div class="portfolio-details">
                             <span class="category">Pricing Optimization</span>
                             <h4 class="title">Product Price Adjustments</h4>
                             <p class="description">Optimizing prices based on demand, expiry dates, and promotional campaigns.</p>
-                            <a href="prices_adjustments.html" class="btn btn-primary">View Project</a>
+                            <a href="projects/prices_adjustments.html" class="btn btn-primary">View Project</a>
                         </div>
                     </div>
                 </div>
@@ -145,12 +194,12 @@
                 <!-- Project 3 -->
                 <div class="col-md-4">
                     <div class="portfolio-card">
-                        <img src="assets/imgs/marketplace/marketplace.png" class="project-image" alt="Marketplace Project">
+                        <img src="projects/images/marketplace/marketplace.png" class="project-image" alt="Marketplace Project">
                         <div class="portfolio-details">
                             <span class="category">Marketplace</span>
                             <h4 class="title">Online Marketplace Platform</h4>
                             <p class="description">A platform connecting buyers and sellers with features like group buying, bidding, and instant purchase options.</p>
-                            <a href="marketplace.html" class="btn btn-primary">View Project</a>
+                            <a href="projects/marketplace.html" class="btn btn-primary">View Project</a>
                         </div>
                     </div>
                 </div>
@@ -158,12 +207,12 @@
                 <!-- Project 4 -->
                 <div class="col-md-4">
                     <div class="portfolio-card">
-                        <img src="assets/imgs/OrderApp/im1.png" class="project-image" alt="QuickPlat Project">
+                        <img src="projects/images/OrderApp/OrderApp.png" class="project-image" alt="QuickPlat Project">
                         <div class="portfolio-details">
                             <span class="category">QuickPlat</span>
                             <h4 class="title">Online Meal Ordering Platform</h4>
                             <p class="description">A platform that redefines food ordering by offering a seamless experience for users to browse, favorite, and order meals efficiently.</p>
-                            <a href="OrderApp.html" class="btn btn-primary">View Project</a>
+                            <a href="projects/OrderApp.html" class="btn btn-primary">View Project</a>
                         </div>
                     </div>
                 </div>
@@ -171,12 +220,12 @@
                 <!-- Daily Trip Forecasting Project -->
                 <div class="col-md-4">
                     <div class="portfolio-card">
-                        <img src="assets/imgs/IDFMtrips/IDFMtrips.png" class="project-image" alt="Daily Trip Forecasting Project">
+                        <img src="projects/images/IDFMtrips/IDFMtrips.png" class="project-image" alt="Daily Trip Forecasting Project">
                         <div class="portfolio-details">
                             <span class="category">Time Series Analysis</span>
                             <h4 class="title">Daily Trip Forecasting with SARIMAX</h4>
                             <p class="description">A predictive analytics tool for anticipating future trip demands based on historical patterns.</p>
-                            <a href="IDFMtrips.html" class="btn btn-primary">View Project</a>
+                            <a href="projects/IDFMtrips.html" class="btn btn-primary">View Project</a>
                         </div>
                     </div>
                 </div>
@@ -184,15 +233,29 @@
                 <!-- Hotel Query Response System Project -->
                 <div class="col-md-4">
                     <div class="portfolio-card">
-                        <img src="assets/imgs/LyricEmails/LyricEmails1.png" class="project-image" alt="Hotel Query Response System Project">
+                        <img src="projects/images/LyricEmails/LyricEmails1.png" class="project-image" alt="Hotel Query Response System Project">
                         <div class="portfolio-details">
-                            <span class="category">NLP</span>
+                            <span class="category">RAG Application</span>
                             <h4 class="title">Hotel Query Response System</h4>
                             <p class="description">An NLP-based system designed to manage customer queries in the hospitality industry with efficient retrieval capabilities.</p>
-                            <a href="LyricEmails.html" class="btn btn-primary">View Project</a>
+                            <a href="projects/LyricEmails.html" class="btn btn-primary">View Project</a>
                         </div>
                     </div>
                 </div>
+    
+                <!-- Wikipedia QA Application Project -->
+                <div class="col-md-4">
+                    <div class="portfolio-card">
+                        <img src="projects/images/wikipedia_QA/wikipedia_QA1.png" class="project-image" alt="Wikipedia QA Application">
+                        <div class="portfolio-details">
+                            <span class="category">RAG Application</span>
+                            <h4 class="title">Wikipedia QA Application</h4>
+                            <p class="description">A conversational retrieval system using OpenAI models to answer questions based on Wikipedia articles.</p>
+                            <a href="projects/wikipedia_QA.html" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+    
             </div>
         </div>
     </section>
@@ -208,7 +271,7 @@
                                 <i class="ti-mobile icon-md"></i>
                             </div>
                             <div class="col-10">
-                                <h6 class="d-inline">Phone : <br> <span class="text-muted">+ (123) 456-7890</span></h6>
+                                <h6 class="d-inline">Phone : <br> <span class="text-muted">+33 7 53 48 29 70</span></h6>
                             </div>
                         </div>
                         <div class="row mb-2">
@@ -216,7 +279,7 @@
                                 <i class="ti-map-alt icon-md"></i>
                             </div>
                             <div class="col-10">
-                                <h6 class="d-inline">Address :<br> <span class="text-muted">12345 Example St, Paris, France</span></h6>
+                                <h6 class="d-inline">Address :<br> <span class="text-muted">Paris, France</span></h6>
                             </div>
                         </div>
                         <div class="row mb-2">
@@ -224,14 +287,12 @@
                                 <i class="ti-envelope icon-md"></i>
                             </div>
                             <div class="col-10">
-                                <h6 class="d-inline">Email :<br> <span class="text-muted">mohamed.zaidi@example.com</span></h6>
+                                <h6 class="d-inline">Email :<br> <span class="text-muted">contact@mohamedzaidi.com</span></h6>
                             </div>
                         </div>
                         <ul class="social-icons pt-4">
-                            <li class="social-item"><a class="social-link text-dark" href="#"><i class="ti-facebook" aria-hidden="true"></i></a></li>
-                            <li class="social-item"><a class="social-link text-dark" href="#"><i class="ti-twitter" aria-hidden="true"></i></a></li>
-                            <li class="social-item"><a class="social-link text-dark" href="#"><i class="ti-linkedin" aria-hidden="true"></i></a></li>
-                            <li class="social-item"><a class="social-link text-dark" href="#"><i class="ti-github" aria-hidden="true"></i></a></li>
+                            <li class="social-item"><a class="social-link text-dark" href="https://linkedin.com/in/mohamed-zaidi"><i class="ti-linkedin" aria-hidden="true"></i></a></li>
+                            <li class="social-item"><a class="social-link text-dark" href="https://github.com/Mohamedcodings"><i class="ti-github" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
                 </div>
