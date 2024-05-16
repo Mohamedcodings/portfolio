@@ -11785,3 +11785,8 @@ ul.navbar-nav.brand .brand-img {
   height: auto;
   border-radius: 45%;
 }
+
+#toastmaster p {
+  text-align: justify;
+  font-size: 20px; /* Adjust as per your existing style */
+}
