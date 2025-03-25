@@ -11,6 +11,126 @@
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
     <!-- Bootstrap + Custom main styles -->
     <link rel="stylesheet" href="assets/css/johndoe.css">
+    <style>
+        .brand-img-container {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid #dc3545;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-right: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .brand-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20%;
+            transition: transform 0.3s ease;
+        }
+
+        .brand-img-container:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        .navbar-nav.brand {
+            display: flex;
+            align-items: center;
+            margin: 0 20px;
+            padding: 5px 0;
+        }
+
+        .brand-txt {
+            margin-left: 5px;
+            line-height: 1.2;
+        }
+
+        .brand-title {
+            margin-bottom: 2px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .brand-subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .navbar .brand:hover .brand-img {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        .avatar-wrapper {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            margin: 0 35px;
+            cursor: pointer;
+        }
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center 15%;
+            transform: scale(1.2);
+            border: 3px solid #fff;
+            box-shadow: 0 3px 12px rgba(220, 53, 69, 0.2);
+            transition: all 0.4s ease;
+        }
+
+        .avatar-glow {
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            border-radius: 50%;
+            border: 3px solid #dc3545;
+            opacity: 0.8;
+            transition: all 0.4s ease;
+        }
+
+        .avatar-wrapper:hover .avatar {
+            transform: scale(1.3);
+            box-shadow: 0 5px 16px rgba(220, 53, 69, 0.3);
+        }
+
+        .avatar-wrapper:hover .avatar-glow {
+            transform: scale(1.15);
+            opacity: 1;
+            box-shadow: 0 0 20px rgba(220, 53, 69, 0.2);
+        }
+
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .profile-name {
+            margin: 0;
+            font-size: 15px;
+            font-weight: 600;
+            color: #333;
+            line-height: 1.2;
+        }
+
+        .profile-role {
+            font-size: 13px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .navbar-nav.brand {
+            margin: 0 25px;
+        }
+    </style>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
@@ -21,7 +141,10 @@
                 <h4 class="header-subtitle">Hello, I am</h4>
                 <h1 class="header-title">Mohamed Zaidi</h1>
                 <h6 class="header-mono">AI Developer | Engineering Student</h6>
-                <a href="CV.pdf" class="btn btn-primary btn-rounded"><i class="ti-printer pr-2"></i> Print Resume</a>
+                <div class="social-icons mt-4">
+                    <a class="social-link btn btn-outline-danger mr-2" href="https://linkedin.com/in/mohamed-zaidi" target="_blank"><i class="ti-linkedin pr-2"></i>LinkedIn</a>
+                    <a class="social-link btn btn-outline-danger" href="https://github.com/Mohamedcodings" target="_blank"><i class="ti-github pr-2"></i>GitHub</a>
+                </div>
             </div>
         </div>
     </header>
@@ -45,10 +168,11 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav brand">
-                    <img src="assets/imgs/avatar.jpg" alt="Mohamed Zaidi Avatar" class="brand-img">
-                    <li class="brand-txt">
-                        <h5 class="brand-title">Mohamed Zaidi</h5>
-                        <div class="brand-subtitle">AI Developer</div>
+                    <li class="nav-item">
+                        <div class="avatar-wrapper">
+                            <img src="assets/imgs/avatar.png" alt="Mohamed Zaidi Avatar" class="avatar">
+                            <div class="avatar-glow"></div>
+                        </div>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
@@ -69,16 +193,16 @@
             <div class="col-lg-4 about-card">
                 <h3 class="font-weight-light">Who am I?</h3>
                 <span class="line mb-5"></span>
-                <h5 class="mb-3">An AI Developer and Engineering Student from Paris</h5>
-                <p class="mt-20">I specialize in artificial intelligence and machine learning, constantly exploring new
-                    ways to integrate these technologies into various projects.</p>
-                <a href="CV.pdf" class="btn btn-outline-danger"><i class="icon-down-circled2"></i> Download My CV</a>
+                <h5 class="mb-3">A 22-year-old Engineering Student from Paris</h5>
+                <p class="mt-20">With a strong foundation in Mathematics and Physics from Preparatory Classes (MP), I'm currently pursuing Computer Systems Engineering at Paris Cité University. I'm an ambitious individual who thrives in intense and challenging situations.</p>
+                <p class="mt-20">I'm driven by a passion for solving complex problems and pushing boundaries in everything I do. My academic background has shaped me into a methodical thinker who enjoys tackling challenging projects.</p>
+                <p class="mt-20">Beyond my technical pursuits, I'm someone who believes in continuous growth and learning. I approach each challenge with enthusiasm and determination, always eager to expand my knowledge and capabilities.</p>
             </div>
             <div class="col-lg-4 about-card">
                 <h3 class="font-weight-light">Personal Info</h3>
                 <span class="line mb-5"></span>
                 <ul class="mt40 info list-unstyled">
-                    <li><span>Email</span> : contact@mohamedzaidi.com</li>
+                    <li><span>Email</span> : zaidi.mzd@gmail.com</li>
                     <li><span>Phone</span> : +33 7 53 48 29 70</li>
                 </ul>
             </div>
@@ -88,8 +212,8 @@
                 <div class="row">
                     <div class="col-1 text-danger pt-1"><i class="ti-widget icon-lg"></i></div>
                     <div class="col-10 ml-auto mr-3">
-                        <h6>AI-Powered Applications</h6>
-                        <p class="subtitle">Developing intelligent systems using advanced machine learning algorithms and NLP techniques to automate and enhance user interactions and decision-making processes.</p>
+                        <h6>AI Development & Machine Learning</h6>
+                        <p class="subtitle">Specializing in AI solutions with a strong mathematical foundation. Experience in OpenAI, HuggingFace, PyTorch, and TensorFlow for building innovative intelligent systems and generative AI applications.</p>
                         <hr>
                     </div>
                 </div>
@@ -97,18 +221,85 @@
                     <div class="col-1 text-danger pt-1"><i class="ti-paint-bucket icon-lg"></i></div>
                     <div class="col-10 ml-auto mr-3">
                         <h6>Full-stack Development</h6>
-                        <p class="subtitle">Designing and implementing full-stack solutions with a focus on integrating backend AI functionalities into responsive and dynamic front-end interfaces.</p>
+                        <p class="subtitle">Proficient in Python, Java, JavaScript, and C. Experienced in modern web technologies and databases (PostgreSQL, MongoDB), with expertise in building responsive and AI-integrated applications.</p>
                         <hr>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-1 text-danger pt-1"><i class="ti-stats-up icon-lg"></i></div>
                     <div class="col-10 ml-auto mr-3">
-                        <h6>AI APIs</h6>
-                        <p class="subtitle">Expertise in integrating and deploying scalable AI-powered APIs</p>
+                        <h6>Data Analysis & Problem Solving</h6>
+                        <p class="subtitle">Strong analytical skills with expertise in NumPy, Pandas, and PowerBI. Combining mathematical background with programming to deliver optimal data-driven solutions and business intelligence.</p>
                         <hr>
                     </div>
                 </div>
+            </div>
+            <div class="col-lg-12 about-card">
+                <h3 class="font-weight-light">Entrepreneurial Ventures</h3>
+                <span class="line mb-5"></span>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="venture-item">
+                            <div class="venture-header">
+                                <i class="ti-camera text-danger icon-lg"></i>
+                                <h6><a href="https://www.snapify.agency/" class="text-danger" target="_blank">Snapify.agency</a></h6>
+                            </div>
+                            <p class="subtitle">Founded and running a photography agency specializing in professional portrait photography, helping individuals and businesses create compelling visual identities.</p>
+                            <div class="venture-link">
+                                <a href="https://www.snapify.agency/" target="_blank" class="btn btn-outline-danger btn-sm">Visit Website <i class="ti-arrow-right ml-1"></i></a>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="venture-item">
+                            <div class="venture-header">
+                                <i class="ti-microphone text-danger icon-lg"></i>
+                                <h6><a href="https://pitchperfect.art/?stay=yes" class="text-danger" target="_blank">PitchPerfect.art</a></h6>
+                            </div>
+                            <p class="subtitle">Developing a platform connecting public speaking coaches with potential clients, streamlining the process of finding and booking professional speaking coaches.</p>
+                            <div class="venture-link">
+                                <a href="https://pitchperfect.art/?stay=yes" target="_blank" class="btn btn-outline-danger btn-sm">Visit Website <i class="ti-arrow-right ml-1"></i></a>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+                <style>
+                    .venture-item {
+                        padding: 20px 0;
+                        transition: transform 0.3s ease;
+                    }
+                    .venture-item:hover {
+                        transform: translateY(-5px);
+                    }
+                    .venture-header {
+                        display: flex;
+                        align-items: center;
+                        gap: 15px;
+                        margin-bottom: 15px;
+                    }
+                    .venture-header h6 {
+                        margin: 0;
+                        font-size: 1.1rem;
+                    }
+                    .venture-header i {
+                        font-size: 1.5rem;
+                    }
+                    .venture-link {
+                        margin: 15px 0;
+                    }
+                    .venture-link .btn {
+                        transition: all 0.3s ease;
+                    }
+                    .venture-link .btn:hover {
+                        transform: translateX(5px);
+                    }
+                    .subtitle {
+                        color: #666;
+                        line-height: 1.6;
+                    }
+                </style>
             </div>
         </div>
     </div>
@@ -177,7 +368,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <!-- Project 2 -->
                 <div class="col-md-4">
                     <div class="portfolio-card">
@@ -190,7 +381,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <!-- Project 3 -->
                 <div class="col-md-4">
                     <div class="portfolio-card">
@@ -203,7 +394,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <!-- Project 4 -->
                 <div class="col-md-4">
                     <div class="portfolio-card">
@@ -216,7 +407,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <!-- Daily Trip Forecasting Project -->
                 <div class="col-md-4">
                     <div class="portfolio-card">
@@ -229,7 +420,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <!-- Hotel Query Response System Project -->
                 <div class="col-md-4">
                     <div class="portfolio-card">
@@ -242,7 +433,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <!-- Wikipedia QA Application Project -->
                 <div class="col-md-4">
                     <div class="portfolio-card">
@@ -255,9 +446,132 @@
                         </div>
                     </div>
                 </div>
-    
+
+                <!-- Hotel Sentiment Analysis Project -->
+                <div class="col-md-4">
+                    <div class="portfolio-card">
+                        <img src="projects/images/sentiment_analysis/sentiment_analysis.png" class="project-image" alt="Hotel Sentiment Analysis">
+                        <div class="portfolio-details">
+                            <span class="category">Sentiment Analysis</span>
+                            <h4 class="title">Hotel Sentiment Analysis</h4>
+                            <p class="description">This project utilizes natural language processing to analyze customer sentiment from hotel reviews, aiding hotel managers in understanding client feedback more effectively.</p>
+                            <a href="projects/sentiment_analysis.html" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prices Adjustments Project -->
+                <div class="col-md-4">
+                    <div class="portfolio-card">
+                        <img src="projects/images/prices_adjustments/PricesAdj1.png" class="project-image" alt="Prices Adjustment Project">
+                        <div class="portfolio-details">
+                            <span class="category">Pricing Optimization</span>
+                            <h4 class="title">Product Price Adjustments</h4>
+                            <p class="description">Optimizing prices based on demand, expiry dates, and promotional campaigns.</p>
+                            <a href="projects/prices_adjustments.html" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="mb-5"><span class="text-danger">Interests</span> & Activities</h1>
+            <div class="row mb-5">
+                <div class="col-md-4">
+                    <div class="activity-card">
+                        <img src="assets/imgs/contest.jpeg" class="activity-img" alt="Public Speaking Contest">
+                        <p class="activity-text mt-3">Active member of Toastmasters International, participating in Area Contests and taking on leadership roles within the organization</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="activity-card">
+                        <img src="assets/imgs/photography.jpg" class="activity-img" alt="Photography Work">
+                        <p class="activity-text mt-3">Professional photographer and member of Association Messire Ouistiti, helping students create compelling portraits for their professional profiles</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="activity-card">
+                        <img src="assets/imgs/pitch.jpeg" class="activity-img" alt="Pitching at BIG Event">
+                        <p class="activity-text mt-3">Pitched innovative ideas at the BIG event organized by Bpifrance in Accor Arena, presenting to investors and the public</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="sports-section">
+                        <h4 class="text-center mb-4">Sports Activities</h4>
+                        <div class="row justify-content-center">
+                            <div class="col-md-5">
+                                <div class="sport-item">
+                                    <h6>Calisthenics</h6>
+                                    <p>Building strength and body control through bodyweight exercises</p>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="sport-item">
+                                    <h6>Archery</h6>
+                                    <p>Developing focus, precision, and mental discipline</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            .activity-card {
+                margin-bottom: 30px;
+                transition: transform 0.3s ease;
+            }
+            .activity-card:hover {
+                transform: translateY(-5px);
+            }
+            .activity-img {
+                width: 100%;
+                height: 250px;
+                object-fit: cover;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+            .activity-text {
+                color: #666;
+                font-size: 0.95rem;
+                line-height: 1.5;
+                margin: 20px 0;
+                padding: 0 10px;
+            }
+            .sports-section {
+                padding: 40px;
+                background: #f8f9fa;
+                border-radius: 12px;
+                margin-top: 20px;
+                box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            }
+            .sport-item {
+                padding: 25px;
+                background: white;
+                border-radius: 10px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+                margin: 10px;
+                text-align: center;
+            }
+            .sport-item h6 {
+                color: #dc3545;
+                margin-bottom: 15px;
+                font-weight: 600;
+                font-size: 1.1rem;
+            }
+            .sport-item p {
+                color: #666;
+                font-size: 0.95rem;
+                margin-bottom: 0;
+                line-height: 1.5;
+            }
+        </style>
     </section>
     
     <div class="section contact" id="contact">
@@ -287,12 +601,12 @@
                                 <i class="ti-envelope icon-md"></i>
                             </div>
                             <div class="col-10">
-                                <h6 class="d-inline">Email :<br> <span class="text-muted">contact@mohamedzaidi.com</span></h6>
+                                <h6 class="d-inline">Email :<br> <span class="text-muted">zaidi.mzd@gmail.com</span></h6>
                             </div>
                         </div>
                         <ul class="social-icons pt-4">
-                            <li class="social-item"><a class="social-link text-dark" href="https://linkedin.com/in/mohamed-zaidi"><i class="ti-linkedin" aria-hidden="true"></i></a></li>
-                            <li class="social-item"><a class="social-link text-dark" href="https://github.com/Mohamedcodings"><i class="ti-github" aria-hidden="true"></i></a></li>
+                            <li class="social-item"><a class="social-link text-dark" href="https://linkedin.com/in/mohamed-zaidi" target="_blank"><i class="ti-linkedin" aria-hidden="true"></i></a></li>
+                            <li class="social-item"><a class="social-link text-dark" href="https://github.com/Mohamedcodings" target="_blank"><i class="ti-github" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
                 </div>
