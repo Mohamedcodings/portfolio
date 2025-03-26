@@ -130,6 +130,30 @@
         .navbar-nav.brand {
             margin: 0 25px;
         }
+
+        .predefined-questions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .predefined-questions button {
+            background-color: #fff;
+            color: #dc3545;
+            border: 1px solid #dc3545;
+            border-radius: 20px;
+            padding: 8px 15px;
+            margin: 5px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .predefined-questions button:hover {
+            background-color: #dc3545;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
     </style>
 </head>
 
@@ -311,7 +335,7 @@
                 <!-- Messages will be dynamically inserted here -->
             </div>
             <div class="chat-input-area">
-                <input type="text" id="chat-input" class="chat-input" placeholder="Tell me about Mohaemd Zaidi...">
+                <input type="text" id="chat-input" class="chat-input" placeholder="Tell me about Mohamed Zaidi...">
                 <button id="send-button" class="btn btn-primary chat-send-btn">Send</button>
             </div>
         </div>
@@ -319,37 +343,71 @@
     
     <script>
         document.getElementById('send-button').addEventListener('click', function () {
-    const inputField = document.getElementById('chat-input');
-    const question = inputField.value.trim();
-    inputField.value = '';
+            const inputField = document.getElementById('chat-input');
+            const question = inputField.value.trim();
+            inputField.value = '';
 
-    if (!question) return;
+            if (!question) return;
 
-    // Display the user's question
-    const chatBox = document.getElementById('chat-box');
-    chatBox.innerHTML += `<div><strong>You:</strong> ${question}</div>`;
+            // Display the user's question
+            const chatBox = document.getElementById('chat-box');
+            chatBox.innerHTML += `<div><strong>You:</strong> ${question}</div>`;
 
-    // Scroll to the bottom
-    chatBox.scrollTop = chatBox.scrollHeight;
-    
-    // Send question to the backend
-    fetch('https://bxj7pavryg.eu-west-3.awsapprunner.com/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ question })
-    })
-        .then(response => response.json())
-        .then(data => {
-            // Display the assistant's response
-            chatBox.innerHTML += `<div><strong>Assistant:</strong> ${data.answer}</div>`;
+            // Scroll to the bottom
             chatBox.scrollTop = chatBox.scrollHeight;
-        })
-        .catch(error => {
-            chatBox.innerHTML += `<div><strong>Error:</strong> Something went wrong. Please try again.</div>`;
-        });
-});
+            
+            // Send question to the backend
+            fetch('https://bxj7pavryg.eu-west-3.awsapprunner.com/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ question })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    // Display the assistant's response
+                    chatBox.innerHTML += `<div><strong>Assistant:</strong> ${data.answer}</div>`;
+                    chatBox.scrollTop = chatBox.scrollHeight;
+                })
+                .catch(error => {
+                    chatBox.innerHTML += `<div><strong>Error:</strong> Something went wrong. Please try again.</div>`;
+                });
 
-        </script>
+            // Hide predefined questions
+            predefinedQuestionsContainer.style.display = 'none';
+        });
+
+        // Allow pressing 'Enter' to send the message
+        document.getElementById('chat-input').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                document.getElementById('send-button').click();
+                // Hide predefined questions
+                predefinedQuestionsContainer.style.display = 'none';
+            }
+        });
+
+        // Predefined questions for potential visitors
+        const predefinedQuestions = [
+            "What is Mohamed Zaidi's expertise?",
+            "Tell me about Mohamed's latest projects.",
+            "How can I contact Mohamed Zaidi?",
+            "What are Mohamed's interests and activities?"
+        ];
+
+        const predefinedQuestionsContainer = document.createElement('div');
+        predefinedQuestionsContainer.classList.add('predefined-questions');
+        predefinedQuestions.forEach(question => {
+            const questionButton = document.createElement('button');
+            questionButton.classList.add('btn', 'btn-outline-secondary', 'm-1');
+            questionButton.textContent = question;
+            questionButton.addEventListener('click', function () {
+                document.getElementById('chat-input').value = question;
+                document.getElementById('send-button').click();
+            });
+            predefinedQuestionsContainer.appendChild(questionButton);
+        });
+
+        document.querySelector('.chat-input-area').insertAdjacentElement('beforebegin', predefinedQuestionsContainer);
+    </script>
             
 
     <section class="section" id="portfolio">
@@ -378,19 +436,6 @@
                             <h4 class="title">Product Price Adjustments</h4>
                             <p class="description">Optimizing prices based on demand, expiry dates, and promotional campaigns.</p>
                             <a href="projects/prices_adjustments.html" class="btn btn-primary">View Project</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="col-md-4">
-                    <div class="portfolio-card">
-                        <img src="projects/images/marketplace/marketplace.png" class="project-image" alt="Marketplace Project">
-                        <div class="portfolio-details">
-                            <span class="category">Marketplace</span>
-                            <h4 class="title">Online Marketplace Platform</h4>
-                            <p class="description">A platform connecting buyers and sellers with features like group buying, bidding, and instant purchase options.</p>
-                            <a href="projects/marketplace.html" class="btn btn-primary">View Project</a>
                         </div>
                     </div>
                 </div>
@@ -469,6 +514,19 @@
                             <h4 class="title">Product Price Adjustments</h4>
                             <p class="description">Optimizing prices based on demand, expiry dates, and promotional campaigns.</p>
                             <a href="projects/prices_adjustments.html" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dining Concierge Chatbot Project -->
+                <div class="col-md-4">
+                    <div class="portfolio-card">
+                        <img src="projects/images/dining-concierge-chatbot/resto3.png" class="project-image" alt="Dining Concierge Chatbot">
+                        <div class="portfolio-details">
+                            <span class="category">AI Chatbot</span>
+                            <h4 class="title">Dining Concierge Chatbot</h4>
+                            <p class="description">A chatbot that recommends restaurants based on user preferences, using Flask, MongoDB, and OpenAI's GPT-4 model.</p>
+                            <a href="projects/dining-concierge-chatbot.html" class="btn btn-primary">View Project</a>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>My AI Project | Hotel Review Management</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+<!-- Font Google -->
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+      <span class="fas fa-bars"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="/Users/mohamedzaidi/Desktop/Dev/portfolio/public_html/index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about-project">About</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- End Navbar --> 
+<!-------Banner Start------->
+<section class="banner" id="home">
+  <div class="banner-overlay">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <div class="banner-text">
+            <h2 class="white">AI Review Response Application</h2>
+            <h6 class="white">Helping Hotel Managers Save Time</h6>
+            <p class="white">An AI tool for automating hotel review responses efficiently.</p>
+            <ul>
+              <li>
+                <a href="https://github.com/Mohamedcodings/hotel-sentiment-analysis" target="_blank" class="btn btn-primary">
+                  View on GitHub
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-12 text-center">
+          <img src="images/sentiment_analysis/sentiment_analysis.png" class="img-fluid wow fadeInUp bigger-image"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-------Banner End-------> 
+<!-------About End------->
+<section id="about-project" class="about section-padding prelative">
+  <div class="container">
+    <div class="section-header text-center">
+      <h3 class="font-weight-light" style="color: #F85C70; font-family: 'Source Sans Pro', sans-serif;">About the Project</h3>
+      <span class="line"></span>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h5 class="font-weight-light" style="color: #F85C70; font-family: 'Source Sans Pro', sans-serif;">Project Overview</h5>
+        <p class="mt-20" style="color: #212529; font-family: 'Source Sans Pro', sans-serif;">
+          The Hotel Sentiment Analysis Dashboard is a Flask-based web application that offers a dynamic overview of customer sentiments across various hotel services such as the pool, breakfast, room, service, and staff. It utilizes Natural Language Processing (NLP) to analyze customer feedback and visualize sentiment trends, helping hotel management to identify areas of improvement and maintain high standards of customer satisfaction.
+        </p>
+        <div class="text-center">
+          <img src="images/sentiment_analysis/sentiment_analysis2.png" class="img-fluid smaller-image"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-4 about-card">
+        <h5 class="font-weight-light" style="color: #F85C70; font-family: 'Source Sans Pro', sans-serif;">Features</h5>
+        <ul class="info list-unstyled mt40" style="color: #212529; font-family: 'Source Sans Pro', sans-serif;">
+          <li><strong>Sentiment Analysis:</strong> Processes textual feedback to calculate and visualize the net sentiment (positive or negative) across different hotel service categories.</li>
+          <li><strong>Trend Visualization:</strong> Displays sentiment trends over time, allowing users to track how changes in service quality or customer perception impact overall sentiment.</li>
+          <li><strong>Actionable Recommendations:</strong> Generates automated, actionable recommendations based on sentiment trends to guide managerial decisions.</li>
+        </ul>
+      </div>
+      
+      <div class="col-md-8 about-card">
+        <h5 class="font-weight-light" style="color: #F85C70; font-family: 'Source Sans Pro', sans-serif;">How It Works</h5>
+        <p style="color: #212529; font-family: 'Source Sans Pro', sans-serif;">
+          The application integrates several Python libraries to perform its tasks:
+        </p>
+        <ul class="info list-unstyled mt40" style="color: #212529; font-family: 'Source Sans Pro', sans-serif;">
+          <li><strong>Flask:</strong> Serves the application and manages routing and web interactions.</li>
+          <li><strong>Pandas:</strong> Used for data manipulation and analysis.</li>
+          <li><strong>Matplotlib:</strong> Provides the tools to create visualizations of the sentiment data.</li>
+          <li><strong>NLTK (Natural Language Toolkit):</strong> Used for processing textual data to compute sentiment scores.</li>
+        </ul>
+        <p style="color: #212529; font-family: 'Source Sans Pro', sans-serif;">
+          The application processes input data from an Excel file containing customer feedback, analyzes the sentiment for categorized keywords (like 'pool', 'room', etc.), and then visualizes these sentiments over time. It dynamically generates recommendations based on the analysis, which are displayed on the dashboard.
+        </p>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-4 about-card">
+        <h5 class="font-weight-light" style="color: #F85C70; font-family: 'Source Sans Pro', sans-serif;">Skills Used</h5>
+        <ul class="info list-unstyled mt40" style="color: #212529; font-family: 'Source Sans Pro', sans-serif;">
+          <li>Web Development with Flask</li>
+          <li>Data Manipulation and Analysis with Pandas</li>
+          <li>Data Visualization with Matplotlib</li>
+          <li>Natural Language Processing with NLTK</li>
+        </ul>
+      </div>
+      
+      <div class="col-md-4 about-card">
+        <h5 class="font-weight-light" style="color: #F85C70; font-family: 'Source Sans Pro', sans-serif;">Project Goals</h5>
+        <p style="color: #212529; font-family: 'Source Sans Pro', sans-serif;">
+          The primary goal of the Hotel Sentiment Analysis project is to equip hotel managers with actionable insights into customer feedback, enabling them to enhance service quality and boost customer satisfaction. By automating sentiment analysis, the project aims to streamline the review management process and provide data-driven recommendations.
+        </p>
+      </div>
+      
+      <div class="col-md-4 about-card">
+        <h5 class="font-weight-light" style="color: #F85C70; font-family: 'Source Sans Pro', sans-serif;">Challenges Faced</h5>
+        <p style="color: #212529; font-family: 'Source Sans Pro', sans-serif;">
+          A significant challenge was ensuring the accuracy of sentiment analysis while preserving the hotel's brand voice in automated responses. Additionally, integrating the system into existing workflows without disrupting operations was a key consideration.
+        </p>
+      </div>
+    </div>
+    
+    <div class="row mt-4">
+      <div class="col-md-6 about-card">
+        <h5 class="font-weight-light" style="color: #F85C70; font-family: 'Source Sans Pro', sans-serif;">Mission</h5>
+        <p style="color: #212529; font-family: 'Source Sans Pro', sans-serif;">
+          To develop an automated review management system that enables managers to respond to client feedback efficiently with tailored responses.
+        </p>
+      </div>
+      
+      <div class="col-md-6 about-card">
+        <h5 class="font-weight-light" style="color: #F85C70; font-family: 'Source Sans Pro', sans-serif;">Outcome</h5>
+        <p style="color: #212529; font-family: 'Source Sans Pro', sans-serif;">
+          The project successfully reduced the time required for review management by providing prompt and consistent responses. This improvement in efficiency allowed hotel managers to focus on other critical aspects of hospitality, ultimately leading to enhanced customer satisfaction and operational effectiveness.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-------About End-------> 
+
+
+<footer class="footer-copy">
+  <div class="container-fluid">
+    <div class="row">
+    </div>
+  </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script> 
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script> 
+<!-- scrollIt js --> 
+<script src="js/scrollIt.min.js"></script> 
+<script src="js/wow.min.js"></script> 
+<script>
+  wow = new WOW();
+  wow.init();
+  $(document).ready(function(e) {
+    $('#video-icon').on('click',function(e){
+      e.preventDefault();
+      $('.video-popup').css('display','flex');
+      $('.iframe-src').slideDown();
+    });
+    $('.video-popup').on('click',function(e){
+      var $target = e.target.nodeName;
+      var video_src = $(this).find('iframe').attr('src');
+      if($target != 'IFRAME'){
+        $('.video-popup').fadeOut();
+        $('.iframe-src').slideUp();
+        $('.video-popup iframe').attr('src'," ");
+        $('.video-popup iframe').attr('src',video_src);
+      }
+    });
+
+    $('.slider').bxSlider({
+      pager: false
+    });
+  });
+
+  $(window).on("scroll",function () {
+    var bodyScroll = $(window).scrollTop(),
+    navbar = $(".navbar");
+
+    if(bodyScroll > 50){
+      $('.navbar-logo img').attr('src','images/logo-black.png');
+      navbar.addClass("nav-scroll");
+    } else {
+      $('.navbar-logo img').attr('src','images/logo.png');
+      navbar.removeClass("nav-scroll");
+    }
+  });
+
+  $(window).on("load",function (){
+    var bodyScroll = $(window).scrollTop(),
+    navbar = $(".navbar");
+
+    if(bodyScroll > 50){
+      $('.navbar-logo img').attr('src','images/logo-black.png');
+      navbar.addClass("nav-scroll");
+    } else {
+      $('.navbar-logo img').attr('src','images/logo-white.png');
+      navbar.removeClass("nav-scroll");
+    }
+
+    $.scrollIt({
+      easing: 'swing',
+      scrollTime: 900,
+      activeClass: 'active',
+      onPageChange: null,
+      topOffset: -63
+    });
+  });
+</script>
+</body>
+</html>
