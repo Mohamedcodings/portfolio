@@ -358,19 +358,22 @@
             
             // Send question to the backend
             fetch('https://bxj7pavryg.eu-west-3.awsapprunner.com/chat', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ question })
-            })
-                .then(response => response.json())
-                .then(data => {
-                    // Display the assistant's response
-                    chatBox.innerHTML += `<div><strong>Assistant:</strong> ${data.answer}</div>`;
-                    chatBox.scrollTop = chatBox.scrollHeight;
-                })
-                .catch(error => {
-                    chatBox.innerHTML += `<div><strong>Error:</strong> Something went wrong. Please try again.</div>`;
-                });
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ question })
+})
+.then(response => response.json())
+.then(data => {
+    console.log("DEBUG - API Response:", data); // Log response for debugging
+    const answer = data.answer || "Sorry, I couldn't generate a response.";
+    chatBox.innerHTML += `<div><strong>Assistant:</strong> ${answer}</div>`;
+    chatBox.scrollTop = chatBox.scrollHeight;
+})
+.catch(error => {
+    console.error("Fetch error:", error);
+    chatBox.innerHTML += `<div><strong>Error:</strong> Something went wrong. Please try again.</div>`;
+});
+
 
             // Hide predefined questions
             predefinedQuestionsContainer.style.display = 'none';
